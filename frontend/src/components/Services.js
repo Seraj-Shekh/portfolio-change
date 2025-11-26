@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Code, Smartphone, Database, Cloud } from 'lucide-react';
 import { services } from '../data/portfolio';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+import './Services.css';
 
 const iconMap = {
   code: Code,
