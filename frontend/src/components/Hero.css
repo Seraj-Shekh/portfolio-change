@@ -1,0 +1,71 @@
+.hero-section {
+  @apply min-h-screen flex items-center justify-center pt-16 px-4 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800;
+}
+
+.hero-container {
+  @apply max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center;
+}
+
+.hero-content {
+  @apply space-y-6;
+}
+
+.hero-title {
+  @apply text-5xl md:text-6xl font-bold text-gray-900 dark:text-white;
+}
+
+.hero-title-highlight {
+  @apply text-blue-600 dark:text-blue-400;
+}
+
+.hero-subtitle {
+  @apply text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300;
+}
+
+.hero-description {
+  @apply text-lg text-gray-600 dark:text-gray-400 leading-relaxed;
+}
+
+.hero-location {
+  @apply flex items-center space-x-2 text-gray-600 dark:text-gray-400;
+}
+
+.hero-buttons {
+  @apply flex flex-wrap gap-4;
+}
+
+.hero-social {
+  @apply flex space-x-4 pt-4;
+}
+
+.hero-social-link {
+  @apply p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white transition-all;
+}
+
+.hero-avatar-container {
+  @apply flex justify-center;
+}
+
+.hero-avatar-wrapper {
+  @apply relative w-80 h-80 md:w-96 md:h-96;
+}
+
+.hero-avatar-bg {
+  @apply absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full animate-pulse;
+}
+
+.hero-avatar-content {
+  @apply absolute inset-4 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center;
+}
+
+.hero-avatar-inner {
+  @apply text-center space-y-4;
+}
+
+.hero-avatar-circle {
+  @apply w-32 h-32 mx-auto bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-5xl font-bold;
+}
+
+.hero-avatar-label {
+  @apply text-xl font-semibold text-gray-800 dark:text-gray-200;
+}

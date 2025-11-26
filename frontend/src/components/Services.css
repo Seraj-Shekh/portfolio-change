@@ -1,0 +1,43 @@
+.services-section {
+  @apply py-20 px-4 bg-white dark:bg-gray-900;
+}
+
+.services-container {
+  @apply max-w-7xl mx-auto;
+}
+
+.services-header {
+  @apply text-center mb-16;
+}
+
+.services-title {
+  @apply text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4;
+}
+
+.services-description {
+  @apply text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto;
+}
+
+.services-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8;
+}
+
+.service-card {
+  @apply h-full hover:shadow-xl transition-all hover:-translate-y-2 border-gray-200 dark:border-gray-700;
+}
+
+.service-icon-wrapper {
+  @apply w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4;
+}
+
+.service-icon {
+  @apply h-7 w-7 text-blue-600 dark:text-blue-400;
+}
+
+.service-title {
+  @apply text-xl;
+}
+
+.service-description {
+  @apply text-gray-600 dark:text-gray-400;
+}

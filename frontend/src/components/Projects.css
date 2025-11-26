@@ -1,0 +1,59 @@
+.projects-section {
+  @apply py-20 px-4 bg-white dark:bg-gray-900;
+}
+
+.projects-container {
+  @apply max-w-7xl mx-auto;
+}
+
+.projects-header {
+  @apply text-center mb-16;
+}
+
+.projects-title {
+  @apply text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4;
+}
+
+.projects-description {
+  @apply text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto;
+}
+
+.projects-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.project-card {
+  @apply h-full flex flex-col hover:shadow-xl transition-all;
+}
+
+.project-image-wrapper {
+  @apply relative overflow-hidden h-48;
+}
+
+.project-image {
+  @apply w-full h-full object-cover transition-transform hover:scale-110;
+}
+
+.project-title {
+  @apply text-xl;
+}
+
+.project-description {
+  @apply line-clamp-3;
+}
+
+.project-technologies {
+  @apply flex flex-wrap gap-2;
+}
+
+.project-buttons {
+  @apply flex gap-4;
+}
+
+.project-button {
+  @apply flex-1;
+}
+
+.project-button-primary {
+  @apply flex-1 bg-blue-600 hover:bg-blue-700;
+}

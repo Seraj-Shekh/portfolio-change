@@ -1,0 +1,47 @@
+.skills-section {
+  @apply py-20 px-4 bg-gray-50 dark:bg-gray-800;
+}
+
+.skills-container {
+  @apply max-w-7xl mx-auto;
+}
+
+.skills-header {
+  @apply text-center mb-16;
+}
+
+.skills-title {
+  @apply text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4;
+}
+
+.skills-description {
+  @apply text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto;
+}
+
+.skills-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+}
+
+.skills-category-title {
+  @apply text-2xl text-blue-600 dark:text-blue-400;
+}
+
+.skills-list {
+  @apply space-y-6;
+}
+
+.skill-item-labels {
+  @apply flex justify-between mb-2;
+}
+
+.skill-name {
+  @apply text-sm font-medium text-gray-700 dark:text-gray-300;
+}
+
+.skill-level {
+  @apply text-sm text-gray-500 dark:text-gray-400;
+}
+
+.skill-progress {
+  @apply h-2;
+}
