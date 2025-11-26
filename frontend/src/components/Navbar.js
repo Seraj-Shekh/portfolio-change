@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { Button } from './ui/button';
+import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
