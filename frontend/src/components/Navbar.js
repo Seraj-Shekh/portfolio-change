@@ -50,29 +50,25 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
-      }`}
+      className={`navbar ${scrolled ? 'scrolled' : ''}`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="navbar-container">
+        <div className="navbar-content">
           <Link
             to="/"
-            className="text-2xl font-bold text-blue-600 dark:text-blue-400"
+            className="navbar-logo"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             Portfolio
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="navbar-links">
             {navLinks.map((link) => (
               link.section ? (
                 <button
                   key={link.name}
                   onClick={() => handleNavClick(link)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                  className="navbar-link"
                 >
                   {link.name}
                 </button>
@@ -80,38 +76,22 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                  className="navbar-link"
                 >
                   {link.name}
                 </Link>
               )
             ))}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="ml-4"
-            >
-              {theme === 'dark' ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
+            <Button variant="ghost" size="icon" onClick={toggleTheme} className="ml-4">
+              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
           </div>
 
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="navbar-mobile-toggle">
             <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {theme === 'dark' ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
+              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 dark:text-gray-300"
-            >
+            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700 dark:text-gray-300">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
@@ -123,15 +103,15 @@ const Navbar = () => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800"
+          className="navbar-mobile-menu"
         >
-          <div className="px-4 py-4 space-y-3">
+          <div className="navbar-mobile-links">
             {navLinks.map((link) => (
               link.section ? (
                 <button
                   key={link.name}
                   onClick={() => handleNavClick(link)}
-                  className="block w-full text-left py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                  className="navbar-mobile-link"
                 >
                   {link.name}
                 </button>
@@ -140,7 +120,7 @@ const Navbar = () => {
                   key={link.name}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                  className="navbar-mobile-link"
                 >
                   {link.name}
                 </Link>
