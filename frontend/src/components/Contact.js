@@ -7,6 +7,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { toast } from '../hooks/use-toast';
+import './Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +16,6 @@ const Contact = () => {
     subject: '',
     message: ''
   });
-
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
@@ -57,24 +57,22 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="contact-section">
+      <div className="contact-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="contact-header"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Get In Touch
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <h2 className="contact-title">Get In Touch</h2>
+          <p className="contact-description">
             Have a project in mind or just want to say hello? Feel free to reach out!
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="contact-grid">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -83,33 +81,30 @@ const Contact = () => {
           >
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl">Contact Information</CardTitle>
+                <CardTitle className="contact-info-title">Contact Information</CardTitle>
                 <CardDescription>
                   Feel free to reach out through any of these channels
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+              <CardContent className="contact-info-list">
+                <div className="contact-info-item">
+                  <div className="contact-icon-wrapper">
+                    <Mail className="contact-icon" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
-                    <a
-                      href={`mailto:${personalInfo.email}`}
-                      className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    >
+                    <p className="contact-info-label">Email</p>
+                    <a href={`mailto:${personalInfo.email}`} className="contact-info-value">
                       {personalInfo.email}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                <div className="contact-info-item">
+                  <div className="contact-icon-wrapper">
+                    <MapPin className="contact-icon" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Location</p>
+                    <p className="contact-info-label">Location</p>
                     <p className="text-gray-900 dark:text-white">{personalInfo.location}</p>
                   </div>
                 </div>
@@ -118,7 +113,7 @@ const Contact = () => {
                   <img
                     src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop"
                     alt="Contact"
-                    className="w-full h-48 object-cover rounded-lg"
+                    className="contact-image"
                   />
                 </div>
               </CardContent>
@@ -133,24 +128,22 @@ const Contact = () => {
           >
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl">Send a Message</CardTitle>
+                <CardTitle className="contact-form-title">Send a Message</CardTitle>
                 <CardDescription>
                   Fill out the form below and I'll get back to you as soon as possible
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="contact-form">
                   <div>
                     <Input
                       name="name"
                       placeholder="Your Name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={errors.name ? 'border-red-500' : ''}
+                      className={errors.name ? 'contact-input-error' : ''}
                     />
-                    {errors.name && (
-                      <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-                    )}
+                    {errors.name && <p className="contact-error">{errors.name}</p>}
                   </div>
 
                   <div>
@@ -160,11 +153,9 @@ const Contact = () => {
                       placeholder="Your Email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={errors.email ? 'border-red-500' : ''}
+                      className={errors.email ? 'contact-input-error' : ''}
                     />
-                    {errors.email && (
-                      <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-                    )}
+                    {errors.email && <p className="contact-error">{errors.email}</p>}
                   </div>
 
                   <div>
@@ -173,11 +164,9 @@ const Contact = () => {
                       placeholder="Subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className={errors.subject ? 'border-red-500' : ''}
+                      className={errors.subject ? 'contact-input-error' : ''}
                     />
-                    {errors.subject && (
-                      <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
-                    )}
+                    {errors.subject && <p className="contact-error">{errors.subject}</p>}
                   </div>
 
                   <div>
@@ -187,18 +176,12 @@ const Contact = () => {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      className={errors.message ? 'border-red-500' : ''}
+                      className={errors.message ? 'contact-input-error' : ''}
                     />
-                    {errors.message && (
-                      <p className="text-red-500 text-sm mt-1">{errors.message}</p>
-                    )}
+                    {errors.message && <p className="contact-error">{errors.message}</p>}
                   </div>
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700"
-                    size="lg"
-                  >
+                  <Button type="submit" className="contact-submit-button" size="lg">
                     <Send className="h-4 w-4 mr-2" />
                     Send Message
                   </Button>
