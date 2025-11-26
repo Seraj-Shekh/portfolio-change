@@ -20,25 +20,23 @@ const Hero = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-6"
+          className="hero-content"
         >
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white"
+            className="hero-title"
           >
             Hello, I'm{' '}
-            <span className="text-blue-600 dark:text-blue-400">
-              {personalInfo.name}
-            </span>
+            <span className="hero-title-highlight">{personalInfo.name}</span>
           </motion.h1>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300"
+            className="hero-subtitle"
           >
             {personalInfo.title}
           </motion.h2>
@@ -47,7 +45,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
+            className="hero-description"
           >
             {personalInfo.bio}
           </motion.p>
@@ -56,7 +54,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex items-center space-x-2 text-gray-600 dark:text-gray-400"
+            className="hero-location"
           >
             <MapPin className="h-5 w-5" />
             <span>{personalInfo.location}</span>
@@ -66,7 +64,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="flex flex-wrap gap-4"
+            className="hero-buttons"
           >
             <Button
               onClick={scrollToContact}
