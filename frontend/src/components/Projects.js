@@ -5,27 +5,26 @@ import { projects } from '../data/portfolio';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
+import './Projects.css';
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 px-4 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="projects-section">
+      <div className="projects-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="projects-header"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Projects
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <h2 className="projects-title">Projects</h2>
+          <p className="projects-description">
             Some of my recent work
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="projects-grid">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -34,35 +33,33 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full flex flex-col hover:shadow-xl transition-all">
-                <div className="relative overflow-hidden h-48">
+              <Card className="project-card">
+                <div className="project-image-wrapper">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform hover:scale-110"
+                    className="project-image"
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                  <CardDescription className="line-clamp-3">
+                  <CardTitle className="project-title">{project.title}</CardTitle>
+                  <CardDescription className="project-description">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  <div className="flex flex-wrap gap-2">
+                  <div className="project-technologies">
                     {project.technologies.map((tech, i) => (
-                      <Badge key={i} variant="secondary">
-                        {tech}
-                      </Badge>
+                      <Badge key={i} variant="secondary">{tech}</Badge>
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter className="flex gap-4">
+                <CardFooter className="project-buttons">
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={() => window.open(project.github, '_blank')}
-                    className="flex-1"
+                    className="project-button"
                   >
                     <Github className="h-4 w-4 mr-2" />
                     Code
@@ -70,7 +67,7 @@ const Projects = () => {
                   <Button
                     size="sm"
                     onClick={() => window.open(project.demo, '_blank')}
-                    className="flex-1 bg-blue-600 hover:bg-blue-700"
+                    className="project-button-primary"
                   >
                     <ExternalLink className="h-4 w-4 mr-2" />
                     Demo
