@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 import { Button } from './ui/button';
+import './Hero.css';
 
 const Hero = () => {
   const scrollToContact = () => {
