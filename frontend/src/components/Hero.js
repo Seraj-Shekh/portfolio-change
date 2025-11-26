@@ -86,13 +86,13 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
-            className="flex space-x-4 pt-4"
+            className="hero-social"
           >
             <a
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white transition-all"
+              className="hero-social-link"
             >
               <Github className="h-5 w-5" />
             </a>
@@ -100,14 +100,11 @@ const Hero = () => {
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white transition-all"
+              className="hero-social-link"
             >
               <Linkedin className="h-5 w-5" />
             </a>
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white transition-all"
-            >
+            <a href={`mailto:${personalInfo.email}`} className="hero-social-link">
               <Mail className="h-5 w-5" />
             </a>
           </motion.div>
@@ -117,18 +114,16 @@ const Hero = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex justify-center"
+          className="hero-avatar-container"
         >
-          <div className="relative w-80 h-80 md:w-96 md:h-96">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full animate-pulse"></div>
-            <div className="absolute inset-4 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <div className="w-32 h-32 mx-auto bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-5xl font-bold">
+          <div className="hero-avatar-wrapper">
+            <div className="hero-avatar-bg"></div>
+            <div className="hero-avatar-content">
+              <div className="hero-avatar-inner">
+                <div className="hero-avatar-circle">
                   {personalInfo.name.charAt(0)}
                 </div>
-                <p className="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                  IT Student
-                </p>
+                <p className="hero-avatar-label">IT Student</p>
               </div>
             </div>
           </div>
