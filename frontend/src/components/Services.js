@@ -14,24 +14,22 @@ const iconMap = {
 
 const Services = () => {
   return (
-    <section id="services" className="py-20 px-4 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="services-section">
+      <div className="services-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="services-header"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Services
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <h2 className="services-title">Services</h2>
+          <p className="services-description">
             What I offer to help bring your ideas to life
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="services-grid">
           {services.map((service, index) => {
             const Icon = iconMap[service.icon];
             return (
@@ -42,15 +40,15 @@ const Services = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-xl transition-all hover:-translate-y-2 border-gray-200 dark:border-gray-700">
+                <Card className="service-card">
                   <CardHeader>
-                    <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="h-7 w-7 text-blue-600 dark:text-blue-400" />
+                    <div className="service-icon-wrapper">
+                      <Icon className="service-icon" />
                     </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                    <CardTitle className="service-title">{service.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-gray-600 dark:text-gray-400">
+                    <CardDescription className="service-description">
                       {service.description}
                     </CardDescription>
                   </CardContent>
