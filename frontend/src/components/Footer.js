@@ -1,26 +1,25 @@
 import React from 'react';
 import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
+import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 dark:bg-black text-white py-12 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-grid">
           <div>
-            <h3 className="text-2xl font-bold mb-4 text-blue-400">Portfolio</h3>
-            <p className="text-gray-400">
-              {personalInfo.title}
-            </p>
+            <h3 className="footer-logo">Portfolio</h3>
+            <p className="footer-description">{personalInfo.title}</p>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="footer-section-title">Quick Links</h4>
+            <ul className="footer-links-list">
               <li>
                 <button
                   onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  className="footer-link"
                 >
                   Home
                 </button>
@@ -28,7 +27,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  className="footer-link"
                 >
                   Projects
                 </button>
@@ -36,7 +35,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  className="footer-link"
                 >
                   Skills
                 </button>
@@ -44,7 +43,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  className="footer-link"
                 >
                   Contact
                 </button>
@@ -53,13 +52,13 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Connect</h4>
-            <div className="flex space-x-4">
+            <h4 className="footer-section-title">Connect</h4>
+            <div className="footer-social">
               <a
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-gray-800 hover:bg-blue-600 transition-all"
+                className="footer-social-link"
               >
                 <Github className="h-5 w-5" />
               </a>
@@ -67,23 +66,20 @@ const Footer = () => {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-gray-800 hover:bg-blue-600 transition-all"
+                className="footer-social-link"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className="p-3 rounded-full bg-gray-800 hover:bg-blue-600 transition-all"
-              >
+              <a href={`mailto:${personalInfo.email}`} className="footer-social-link">
                 <Mail className="h-5 w-5" />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center">
-          <p className="text-gray-400 flex items-center justify-center">
-            Made with <Heart className="h-4 w-4 mx-2 text-red-500" /> by {personalInfo.name} © {new Date().getFullYear()}
+        <div className="footer-bottom">
+          <p className="footer-copyright">
+            Made with <Heart className="footer-heart" /> by {personalInfo.name} © {new Date().getFullYear()}
           </p>
         </div>
       </div>
