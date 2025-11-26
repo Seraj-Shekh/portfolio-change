@@ -1,0 +1,67 @@
+.education-section {
+  @apply py-20 px-4 bg-gray-50 dark:bg-gray-800;
+}
+
+.education-container {
+  @apply max-w-7xl mx-auto;
+}
+
+.education-header {
+  @apply text-center mb-16;
+}
+
+.education-title {
+  @apply text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4;
+}
+
+.education-description {
+  @apply text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto;
+}
+
+.education-grid {
+  @apply grid md:grid-cols-2 gap-8;
+}
+
+.education-column-title {
+  @apply text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center;
+}
+
+.education-icon {
+  @apply h-6 w-6 mr-2 text-blue-600 dark:text-blue-400;
+}
+
+.education-list {
+  @apply space-y-6;
+}
+
+.education-card {
+  @apply hover:shadow-lg transition-shadow;
+}
+
+.education-card-title {
+  @apply text-lg;
+}
+
+.education-date {
+  @apply flex items-center text-sm text-gray-600 dark:text-gray-400 mb-2;
+}
+
+.education-status {
+  @apply text-sm font-medium text-blue-600 dark:text-blue-400;
+}
+
+.education-gpa {
+  @apply text-sm text-gray-600 dark:text-gray-400;
+}
+
+.experience-responsibilities {
+  @apply space-y-2 text-sm text-gray-600 dark:text-gray-400;
+}
+
+.experience-responsibility-item {
+  @apply flex items-start;
+}
+
+.experience-bullet {
+  @apply inline-block w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400 mr-2 mt-2 flex-shrink-0;
+}
