@@ -69,3 +69,14 @@
 .hero-avatar-label {
   @apply text-xl font-semibold text-gray-800 dark:text-gray-200;
 }
+
+/* Full-size circular photo that covers the outer ring area */
+.hero-avatar-full {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 6px 18px rgba(13, 42, 148, 0.12);
+}

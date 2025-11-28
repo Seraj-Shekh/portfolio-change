@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
@@ -11,6 +11,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,8 +40,14 @@ const Navbar = () => {
   };
 
   const handleNavClick = (link) => {
-    if (link.section && location.pathname === '/') {
-      scrollToSection(link.section);
+    if (link.section) {
+      if (location.pathname === '/') {
+        scrollToSection(link.section);
+      } else {
+        // Navigate to home and pass the section to scroll to via state
+        navigate('/', { state: { scrollTo: link.section } });
+        setIsOpen(false);
+      }
     } else {
       setIsOpen(false);
     }

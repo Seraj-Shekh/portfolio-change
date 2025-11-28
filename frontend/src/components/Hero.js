@@ -117,15 +117,26 @@ const Hero = () => {
           className="hero-avatar-container"
         >
           <div className="hero-avatar-wrapper">
-            <div className="hero-avatar-bg"></div>
-            <div className="hero-avatar-content">
-              <div className="hero-avatar-inner">
-                <div className="hero-avatar-circle">
-                  {personalInfo.name.charAt(0)}
+            {/* If a photo is provided, render it as a full-size circular background
+                that fills the outer ring. Otherwise fall back to the original
+                gradient + inner initial avatar. */}
+            {personalInfo.photo ? (
+              <div
+                className="hero-avatar-full"
+                style={{ backgroundImage: `url(${personalInfo.photo})` }}
+              />
+            ) : (
+              <>
+                <div className="hero-avatar-bg"></div>
+                <div className="hero-avatar-content">
+                  <div className="hero-avatar-inner">
+                    <div className="hero-avatar-circle">
+                      {personalInfo.name.charAt(0)}
+                    </div>
+                  </div>
                 </div>
-                <p className="hero-avatar-label">IT Student</p>
-              </div>
-            </div>
+              </>
+            )}
           </div>
         </motion.div>
       </div>

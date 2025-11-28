@@ -1,6 +1,6 @@
 export const personalInfo = {
-  name: "IT Student",
-  title: "IT Student at Oulu University of Applied Sciences",
+  photo : "/frontface.jpg",
+  name: "Seraj Shekh",
   bio: "I am a driven IT student with a passion for problem-solving and innovation. Eager to apply my technical skills and knowledge in real-world scenarios to contribute to cutting-edge projects and make a positive impact. Committed to continuous learning and growth, I strive to excel in every endeavor, embracing challenges as opportunities for personal and professional development.",
   email: "contact@example.com",
   location: "Oulu, Finland",
